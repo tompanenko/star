@@ -1,7 +1,6 @@
 import tkinter as tk
 import numpy as np
 import time
-from star import StarGrid
 from starz3 import solvez3
 # Size of square in grid
 GRID_SQUARE_SIZE = 40
@@ -113,9 +112,7 @@ class SolverGUI(tk.Tk):
             for col in range(self.num_regions):
                 color = self.square_to_color[row][col]
                 regions[color].append((row, col))
-        
-        sg = StarGrid(regions)
-        start = time.time()
+       
         solution = solvez3(regions)
         
         
